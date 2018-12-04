@@ -1,11 +1,12 @@
-function setup(){
+function setup() {
     createCanvas(640, 480);
 }
 
-function draw() {    
-    var x = mouseX;
-    var y = mouseY;
-    background(255, 200, 100);
+function draw() {
+    background('#52BE80');
+    
+    var x = width/2;
+    var y = height/2;
     
     
     //face
@@ -44,18 +45,18 @@ function draw() {
     //earLeft
     fill('#250232');
     push();
-    triangle(mouseX - 70,mouseY - 130, mouseX- 70, mouseY-80, mouseX - 50, mouseY -95);
+    triangle(250,160, 280, 140, 250, 110);
     pop();
     
     //earRight
     fill('#250232');
     push();
-    triangle(mouseX + 70, mouseY -130, mouseX +70, mouseY - 80, mouseX + 50, mouseY-95);
+    triangle(350,140, 380, 160, 380, 110);
     pop();
     
     //mouth
     fill('#DCDCDC');
-    quad(mouseX -);
+    quad(295, 280, 305, 295, 335, 295, 345, 280);
     
     stroke('#DCDCDC');
     strokeWeight(3);
