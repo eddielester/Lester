@@ -1,12 +1,19 @@
+var cat;
+var feed = [];
+var numFood = 10;
+
+var a = [1,2,3];
+
 function setup() {
     createCanvas(640, 480);
+    
 }
 
 function draw() {
     background('#52BE80');
     
-    var x = width/2;
-    var y = height/2;
+    var x = mouseX;
+    var y = mouseY;
     
     
     //face
@@ -16,15 +23,15 @@ function draw() {
     //nose
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(305,260, 335,260);
+    line(x-15, y+15, x+15, y+15);
     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(295,245, 305,260);
-    
+    line(x-25, y, x-15, y+15);
+     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(345,245, 335,260);
+    line(x+25 ,y, x+15 , y+15);
     
     //eyeLeft
     fill('#FFFFFF');
@@ -45,32 +52,32 @@ function draw() {
     //earLeft
     fill('#250232');
     push();
-    triangle(250,160, 280, 140, 250, 110);
+    triangle(x-70, y-70, x-70, y-110, x-40, y-90);
     pop();
     
     //earRight
     fill('#250232');
     push();
-    triangle(350,140, 380, 160, 380, 110);
+    triangle(x+70, y-70, x+70, y-110, x+40, y-90);
     pop();
     
     //mouth
     fill('#DCDCDC');
-    quad(295, 280, 305, 295, 335, 295, 345, 280);
+    quad(x-25, y+35, x-15, y+50, x+15, y+50, x+25, y+35);
     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(250,250, 280,260);
+    line(x-70,y+10, x-40,y+20);
     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(390,250, 360,259);
+    line(x+70,y+10, x+40, y+20);
     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(280,260, 290,300);
+    line(x-40, y+20, x-30, y+80);
     
     stroke('#DCDCDC');
     strokeWeight(3);
-    line(360,259, 350, 300);
+    line(x+40, y+20, x+30, y+80);
 }
