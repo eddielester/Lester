@@ -1,6 +1,7 @@
 var cat;
 var feed = [];
 var numFood = 10;
+var count;
 //commit test
 
 
@@ -56,8 +57,16 @@ function Cat(){
             var r2 = 100;
             if(r1 + r2 > d) {
                 feed.splice(i, 1);
+                feed.push(new Food(random(width), random(height)));
             }
         }
+    };
+    
+    function foodCounter(){
+        if(Cat.eat){
+            count++;
+        }
+        println(count);
     };
     
     this.display = function(){
@@ -129,5 +138,11 @@ function Cat(){
         stroke('#DCDCDC');
         strokeWeight(3);
         line(x+40, y+20, x+30, y+80);
+        
+        foodCounter();
     };
+    
+}
+
+
 }
