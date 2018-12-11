@@ -113,6 +113,7 @@ function Cat(){
         fill('#DCDCDC');
         quad(x-25, y+35, x-15, y+50, x+15, y+50, x+25, y+35);
         
+        //Lines
         stroke('#DCDCDC');
         strokeWeight(3);
         line(x-70,y+10, x-40,y+20);
