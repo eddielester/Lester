@@ -1,7 +1,7 @@
 var cat;
 var feed = [];
 var numFood = 10;
-var count;
+var count = 0;
 //commit test
 
 
@@ -25,13 +25,16 @@ function draw() {
 
 function mousePressed(){
     cat.eat();
+    if(mouseIsPressed){
+        count+=1;
+    }  
 }
 
 function Food(x,y) {
     
     this.x = x;
     this.y = y;
-    this.color = color(255, 0, 0);
+    this.color = color(0, 255, 25);
     this.foodSize = 50;
     
     this.display = function() {
@@ -47,7 +50,7 @@ function Cat(){
     this.getDistance = function(other){
         var dist = Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
         return dist;
-    };
+    }
     
     this.eat = function() {
         for(var i = 0; i < numFood; i++) {
@@ -60,16 +63,17 @@ function Cat(){
                 feed.push(new Food(random(width), random(height)));
             }
         }
-    };
+    }
     
-    function foodCounter(){
-        if(Cat.eat){
-            count++;
-        }
-        println(count);
-    };
+    
+
+        
     
     this.display = function(){
+        fill('#1FC7DA')
+        textSize(20);
+        text("Score: " + count, 20, 20);
+        
         x = mouseX;
         y = mouseY;
         
@@ -91,11 +95,17 @@ function Cat(){
         line(x+25 ,y, x+15 , y+15);
         
         //eyeLeft
+        
         fill('#FFFFFF');
         ellipse(x+42, y-26, 64 ,40);
         
         //pupilLeft
-        fill('#DCDCDC');
+        if(mouseIsPressed){
+            fill('#6A1FDA');
+        } else {
+            fill('#DCDCDC');
+        }
+        
         ellipse(x+42, y-26, 30 ,30);
         
         //eyeRight
@@ -103,7 +113,11 @@ function Cat(){
         ellipse(x-42, y-26, 64 ,40);
         
         //pupilRight
-        fill('#DCDCDC');
+        if(mouseIsPressed){
+            fill('#6A1FDA');
+        } else {
+            fill('#DCDCDC');
+        }
         ellipse(x-42, y-26, 30 ,30);
         
         //earLeft
@@ -139,10 +153,9 @@ function Cat(){
         strokeWeight(3);
         line(x+40, y+20, x+30, y+80);
         
-        foodCounter();
-    };
+        
+    }
     
 }
 
 
-}
