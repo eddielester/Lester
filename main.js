@@ -27,7 +27,7 @@ function mousePressed(){
     cat.eat();
 
 }
-//commit to README
+
 function Food(x,y) {
     
     this.x = x;
