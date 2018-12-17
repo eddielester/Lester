@@ -93,7 +93,7 @@ function Cat(){
         strokeWeight(3);
         line(x+25 ,y, x+15 , y+15);
         
-        //eyeLeft
+        
         
         fill('#FFFFFF');
         ellipse(x+42, y-26, 64 ,40);
