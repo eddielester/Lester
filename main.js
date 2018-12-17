@@ -25,9 +25,7 @@ function draw() {
 
 function mousePressed(){
     cat.eat();
-    if(mouseIsPressed){
-        count+=1;
-    }  
+
 }
 
 function Food(x,y) {
@@ -61,6 +59,7 @@ function Cat(){
             if(r1 + r2 > d) {
                 feed.splice(i, 1);
                 feed.push(new Food(random(width), random(height)));
+                count ++;
             }
         }
     }
@@ -70,7 +69,7 @@ function Cat(){
         
     
     this.display = function(){
-        fill('#1FC7DA')
+        fill('#F30C0C')
         textSize(20);
         text("Score: " + count, 20, 20);
         
