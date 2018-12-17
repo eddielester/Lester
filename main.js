@@ -2,7 +2,7 @@ var cat;
 var feed = [];
 var numFood = 10;
 var count = 0;
-//commit test
+
 
 
 function setup() {
